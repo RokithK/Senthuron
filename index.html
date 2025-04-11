@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LetsGala - Plan Your Perfect Event</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="LetsGala Logo" class="logo">
+            <h1>Plan Your Perfect Event with LetsGala</h1>
+            <div class="cta-group">
+                <a href="#services" class="cta">Explore Our Services</a>
+                <a href="{{ url_for('about') }}" class="cta">About Us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Fast Booking Venues -->
+    <section id="fast-booking">
+        <h2>Explore 5+ Fast Booking Venues</h2>
+        <div class="venue-gallery">
+            {% for venue in ['venue1.jpg', 'venue2.jpg', 'venue3.jpg', 'venue4.jpeg'] %}
+            <div class="venue-item">
+                <img src="{{ url_for('static', filename='images/' + venue) }}" alt="Venue Image">
+                <p>{{ ['Wedding', 'Birthday', 'Baby Shower', 'Corporate'][loop.index0] }} Venues</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Featured Vendors -->
+    <section id="vendors">
+        <h2>Featured Vendors</h2>
+        <img src="{{ url_for('static', filename='images/vendor.jpeg') }}" alt="Vendor Image" class="vendor-image">
+        <p>Hilton Motif Seattle</p>
+        <div class="vendor-buttons">
+            <button class="cta small">View</button>
+            <button class="cta small">Book</button>
+        </div>
+    </section>
+
+    <!-- Celebrations -->
+    <section id="celebrations">
+        <h2>Explore by Celebration</h2>
+        <div class="celebration-gallery">
+            {% for i in range(1,5) %}
+            <div class="celebration-item">
+                <img src="{{ url_for('static', filename='images/celebration' + i|string + '.jpeg') }}" alt="Celebration {{ i }}">
+                <p>{{ ['Wedding Birthday', 'Miladys', 'Baby Showers', 'Campus Events'][i-1] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <p class="promo">20% Off for Birthday Events | 20% Off for 1st Birthday Events</p>
+    </section>
+
+    <!-- Top Rated Planners -->
+    <section id="planners">
+        <h2>Top Rated Planners</h2>
+        <div class="planner-gallery">
+            {% for i in range(1,5) %}
+            <div class="planner-item">
+                <img src="{{ url_for('static', filename='images/planner' + i|string + '.jpg') }}" alt="Planner {{ i }}">
+                <p>{{ ['Wedding Planners', 'Working Flowers', 'Corporate Planners', 'Campus Planners'][i-1] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Vendor Categories -->
+    <section id="categories">
+        <h2>Vendor Categories</h2>
+        <div class="category-gallery">
+            {% for i in range(1,4) %}
+            <div class="category-item">
+                <img src="{{ url_for('static', filename='images/category' + i|string + ('.webp' if i == 3 else '.jpg' if i == 1 else '.jpeg')) }}" alt="Category {{ i }}">
+                <p>{{ ['Venue', 'Catering', 'Entertainment'][i-1] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="category-buttons">
+            <button class="cta small">View More</button>
+        </div>
+    </section>
+
+    <!-- Work in Action -->
+    <section id="work">
+        <h2>See Our Work in Action</h2>
+        <div class="work-gallery">
+            {% for i in range(1,4) %}
+            <div class="work-item">
+                <img src="{{ url_for('static', filename='images/work' + i|string + '.jpeg') }}" alt="Work {{ i }}">
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-gallery">
+            <div class="testimonial-item">
+                <p>"Amazing service! Highly recommend."</p>
+                <span>- Damayanthi Sudha</span><span>4.7 ★★★★☆</span>
+            </div>
+            <div class="testimonial-item">
+                <p>"Perfect event planning experience."</p>
+                <span>- Cameron Sudha</span><span>4.8 ★★★★★</span>
+            </div>
+            <div class="testimonial-item">
+                <p>"Great team, amazing results!"</p>
+                <span>- Gowri Sudha</span><span>4.7 ★★★★☆</span>
+            </div>
+        </div>
+        <a href="#contact" class="cta">Connect with Our Community</a>
+    </section>
+
+    <!-- Community -->
+    <section id="community">
+        <h2>Beautiful Community</h2>
+        <img src="{{ url_for('static', filename='images/community.jpeg') }}" alt="Community Image" class="community-image">
+        <p>Ready to plan your unforgettable celebration?</p>
+        <a href="#contact" class="cta">Get Started</a>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>© 2025 LetsGala. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="{{ url_for('about') }}">About</a> | <a href="#">Events</a> | <a href="#">Contact</a> | <a href="#">Blog</a>
+        </div>
+        <div class="footer-contact">
+            <a href="mailto:contact@letsgala.com" class="cta">Contact Us</a>
+        </div>
+    </footer>
+
+</body>
+</html>

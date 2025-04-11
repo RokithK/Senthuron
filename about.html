@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Rokith K</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}"> <!-- Updated CSS link -->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Rokith K Logo" class="logo">
+            <h1>About Rokith K</h1>
+        </div>
+    </header>
+
+    <!-- About Content -->
+    <section id="about">
+        <div class="container">
+            <h2>Who I Am</h2>
+            <p>I am Rokith K, a dedicated student pursuing a degree in Data Science at CIT (Coimbatore Institute of Technology). My journey in the field of data science is driven by a passion for uncovering insights through data and leveraging technology to solve real-world problems.</p>
+
+            <h2>My Details</h2>
+            <ul>
+                <li><strong>Roll Number:</strong> 71762232045</li>
+                <li><strong>Department:</strong> Data Science</li>
+                <li><strong>College:</strong> CIT (Coimbatore Institute of Technology)</li>
+                <li><strong>Batch:</strong> 2022-2027</li>
+            </ul>
+
+            
+            <img src="{{ url_for('static', filename='images/dp.jpg') }}" alt="Rokith K" class="profile-image">
+           
+        </div>
+    </section>
+
+    <!-- Back Button -->
+    <div class="back-btn">
+        <a href="/" class="cta">← Back to Home</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Rokith K. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="/">Home</a> | <a href="/about">About</a> | <a href="#">Contact</a>
+        </div>
+    </footer>
+</body>
+</html>
